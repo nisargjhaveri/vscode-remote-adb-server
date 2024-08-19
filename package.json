@@ -1,7 +1,7 @@
 {
-	"name": "remote-android",
+	"name": "remote-adb-server",
 	"publisher": "nisargjhaveri",
-	"displayName": "Remote Android Debugging",
+	"displayName": "Remote Android Debugging (Server)",
 	"description": "Connect local Android devices to remote machine for debugging",
 	"version": "0.0.1",
 	"engines": {
@@ -11,19 +11,21 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:remote-android.openExternal",
-		"onCommand:remote-android.getExternalUrl"
+		"onCommand:remote-adb.openExternal",
+		"onCommand:remote-adb.getExternalUrl"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "remote-android.openExternal",
-				"title": "Open Remote Android in browser"
+				"command": "remote-adb.openExternal",
+				"title": "Open in browser to connect Android devices",
+				"category": "Remote Android"
 			},
 			{
-				"command": "remote-android.stopServer",
-				"title": "Stop Remote Android server"
+				"command": "remote-adb.stopServer",
+				"title": "Stop server",
+				"category": "Remote Android"
 			}
 		]
 	},

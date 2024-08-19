@@ -18,7 +18,7 @@ async function ensureServerListening() {
 export function activate(context: vscode.ExtensionContext) {
 	setRemoteAdbLogger(logger);
 
-	context.subscriptions.push(vscode.commands.registerCommand('remote-android.openExternal', async () => {
+	context.subscriptions.push(vscode.commands.registerCommand('remote-adb.openExternal', async () => {
 		await ensureServerListening();
 
 		if (serverUri) {
@@ -26,7 +26,7 @@ export function activate(context: vscode.ExtensionContext) {
 		}
 	}));
 
-	context.subscriptions.push(vscode.commands.registerCommand('remote-android.getExternalUrl', async (): Promise<vscode.Uri|undefined> => {
+	context.subscriptions.push(vscode.commands.registerCommand('remote-adb.getExternalUrl', async (): Promise<vscode.Uri|undefined> => {
 		await ensureServerListening();
 
 		if (serverUri) {
@@ -34,7 +34,7 @@ export function activate(context: vscode.ExtensionContext) {
 		}
 	}));
 
-	context.subscriptions.push(vscode.commands.registerCommand('remote-android.stopServer', async () => {
+	context.subscriptions.push(vscode.commands.registerCommand('remote-adb.stopServer', async () => {
 		await server?.stop();
 	}));
 }
