@@ -3,6 +3,7 @@
 	"publisher": "nisargjhaveri",
 	"displayName": "Remote Android Debugging (Server)",
 	"description": "Connect local Android devices to remote machine for debugging",
+	"repository": "https://github.com/nisargjhaveri/vscode-remote-adb-server",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.74.0"
