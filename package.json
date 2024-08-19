@@ -11,6 +11,13 @@
 	"categories": [
 		"Other"
 	],
+	"keywords": [
+		"remote",
+		"remote development",
+		"adb",
+		"android",
+		"debugging"
+	],
 	"activationEvents": [
 		"onCommand:remote-adb.openExternal",
 		"onCommand:remote-adb.getExternalUrl"
