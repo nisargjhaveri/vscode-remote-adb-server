@@ -1,5 +1,6 @@
 import * as vscode from 'vscode';
-import { Server, setLogger as setRemoteAdbLogger } from 'remote-adb';
+import { Server } from 'remote-adb/dist/server';
+import { setLogger as setRemoteAdbLogger } from 'remote-adb/dist/common/logger';
 
 import { logger } from './logger';
 
