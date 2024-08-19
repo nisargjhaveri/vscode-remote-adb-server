@@ -16,6 +16,7 @@
 		"onCommand:remote-adb.getExternalUrl"
 	],
 	"main": "./dist/extension.js",
+	"extensionKind": ["workspace"],
 	"contributes": {
 		"commands": [
 			{
