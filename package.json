@@ -4,7 +4,7 @@
 	"displayName": "Remote Android Debugging (Server)",
 	"description": "Connect local Android devices to remote machine for debugging",
 	"repository": "https://github.com/nisargjhaveri/vscode-remote-adb-server",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"engines": {
 		"vscode": "^1.74.0"
 	},
@@ -23,7 +23,9 @@
 		"onCommand:remote-adb.getExternalUrl"
 	],
 	"main": "./dist/extension.js",
-	"extensionKind": ["workspace"],
+	"extensionKind": [
+		"workspace"
+	],
 	"contributes": {
 		"commands": [
 			{
