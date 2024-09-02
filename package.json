@@ -53,8 +53,8 @@
 		"pretest": "npm run compile-tests && npm run compile && npm run lint",
 		"lint": "eslint src --ext ts",
 		"test": "node ./out/test/runTest.js",
-		"install-remote-adb-web": "cp -r node_modules/remote-adb/dist/web/* web/",
-		"postinstall": "mkdir -p web && npm run install-remote-adb-web"
+		"install-remote-adb-web": "mkdir -p dist/web && cp -r node_modules/remote-adb/dist/web/* dist/web/",
+		"postinstall": "npm run install-remote-adb-web"
 	},
 	"devDependencies": {
 		"@types/glob": "^7.2.0",
