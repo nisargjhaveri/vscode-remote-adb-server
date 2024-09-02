@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
-import { Server } from 'remote-adb/dist/server';
-import { setLogger as setRemoteAdbLogger } from 'remote-adb/dist/common/logger';
+import { Server } from 'remote-adb/server';
+import { setLogger as setRemoteAdbLogger } from 'remote-adb/logger';
 
 import { logger } from './logger';
 
@@ -9,7 +9,7 @@ let serverUri: vscode.Uri|undefined = undefined;
 
 async function ensureServerListening() {
 	if (!server) {
-		server = new Server(0);
+		server = new Server({ port: 0 });
 	}
 	if (!server.isListening()) {
 		serverUri = vscode.Uri.parse(await server.start());

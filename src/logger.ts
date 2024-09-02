@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { Logger } from 'remote-adb';
+import type { Logger } from 'remote-adb/logger';
 
 class OutputLogger implements Logger {
     private channel = vscode.window.createOutputChannel("Remote Android - Server", { log: true });
