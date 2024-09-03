@@ -16,7 +16,8 @@ Once installed, simply search and execute these commands to get started.
     - Start server and open the web interface.
     - Follow on-screen interface to connect a device.
 
-If you want to stop the running server, you can use **Remote Android: Stop server** command.
+- **Remote Android: Stop server**
+    - Stop the running server
 
 
 *** The web interface is currently only supported Chromium-based browsers. See [compatibility for WebUSB API](https://developer.mozilla.org/en-US/docs/Web/API/USB).
