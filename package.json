@@ -73,6 +73,6 @@
 		"typescript": "^5.5.4"
 	},
 	"dependencies": {
-		"remote-adb": "^3.0.0"
+		"remote-adb": "^3.0.1"
 	}
 }
