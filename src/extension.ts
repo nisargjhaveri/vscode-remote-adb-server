@@ -7,22 +7,48 @@ import { logger } from './logger';
 let server: Server|undefined = undefined;
 let serverUri: vscode.Uri|undefined = undefined;
 
-async function ensureServerListening(context: vscode.ExtensionContext) {
-	if (!server) {
-		server = new Server(
-			{
-				port: 0,
-				host: "127.0.0.1"
-			},
-			/* httpsOptions */ undefined,
-			{
-				staticClientPath: vscode.Uri.joinPath(context.extensionUri, "dist/web").fsPath,
-			}
-		);
-	}
+async function startServerAtPort(context: vscode.ExtensionContext, port: number): Promise<vscode.Uri> {
+	server = new Server(
+		{
+			port: port,
+			host: "127.0.0.1"
+		},
+		/* httpsOptions */ undefined,
+		{
+			staticClientPath: vscode.Uri.joinPath(context.extensionUri, "dist/web").fsPath,
+		}
+	);
 
-	if (!server.isListening()) {
-		serverUri = vscode.Uri.parse(await server.start());
+	serverUri = vscode.Uri.parse(await server.start());
+	return serverUri;
+}
+
+async function ensureServerListening(context: vscode.ExtensionContext) {
+	if (!(server && server.isListening())) {
+		let port: number = 44615;
+		let remainingAttempts = 5;
+
+		while (remainingAttempts > 0) {
+			remainingAttempts--;
+
+			try {
+				await startServerAtPort(context, port);
+				break;
+			} catch (e: any) {
+				if (e.code === "EADDRINUSE" && remainingAttempts > 0) {
+					logger.info(`Port ${port} is already in use, trying another port...`);
+					if (remainingAttempts === 1) {
+						// Try random port on the last attempt
+						port = 0;
+					} else {
+						port++;
+					}
+				} else {
+					logger.error(`Failed to start server: ${e.message}`);
+					throw e;
+				}
+			}
+		}
 	}
 }
 
