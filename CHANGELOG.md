@@ -2,6 +2,10 @@
 
 All notable changes to the "remote-adb-server" extension will be documented in this file.
 
+## 0.3.0
+- Change command prefixes from `remote-adb` to `remote-adb-server`.
+- Bump [remote-adb](https://github.com/nisargjhaveri/remote-adb) to 3.1.0
+
 ## 0.2.1
 - Start server on same or similar ports across runs, this helps remember device permissions in the browser.
 - npm audit fix
