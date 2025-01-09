@@ -59,7 +59,7 @@ export function activate(context: vscode.ExtensionContext) {
 		return true;
 	}));
 
-	context.subscriptions.push(vscode.commands.registerCommand('remote-adb.openExternal', async () => {
+	context.subscriptions.push(vscode.commands.registerCommand('remote-adb-server.openExternal', async () => {
 		await ensureServerListening(context);
 
 		if (serverUri) {
@@ -67,7 +67,7 @@ export function activate(context: vscode.ExtensionContext) {
 		}
 	}));
 
-	context.subscriptions.push(vscode.commands.registerCommand('remote-adb.getExternalUrl', async (): Promise<vscode.Uri|undefined> => {
+	context.subscriptions.push(vscode.commands.registerCommand('remote-adb-server.getExternalUrl', async (): Promise<vscode.Uri|undefined> => {
 		await ensureServerListening(context);
 
 		if (serverUri) {
@@ -75,7 +75,7 @@ export function activate(context: vscode.ExtensionContext) {
 		}
 	}));
 
-	context.subscriptions.push(vscode.commands.registerCommand('remote-adb.stopServer', async () => {
+	context.subscriptions.push(vscode.commands.registerCommand('remote-adb-server.stopServer', async () => {
 		await server?.stop();
 	}));
 }

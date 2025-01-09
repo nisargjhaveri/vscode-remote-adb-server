@@ -20,8 +20,8 @@
 	],
 	"activationEvents": [
 		"onCommand:remote-adb-server.activate",
-		"onCommand:remote-adb.openExternal",
-		"onCommand:remote-adb.getExternalUrl"
+		"onCommand:remote-adb-server.openExternal",
+		"onCommand:remote-adb-server.getExternalUrl"
 	],
 	"main": "./dist/extension.js",
 	"extensionKind": [
@@ -30,12 +30,12 @@
 	"contributes": {
 		"commands": [
 			{
-				"command": "remote-adb.openExternal",
+				"command": "remote-adb-server.openExternal",
 				"title": "Open in browser to connect Android devices",
 				"category": "Remote Android"
 			},
 			{
-				"command": "remote-adb.stopServer",
+				"command": "remote-adb-server.stopServer",
 				"title": "Stop server",
 				"category": "Remote Android"
 			}
