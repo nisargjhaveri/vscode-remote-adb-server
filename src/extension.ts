@@ -55,6 +55,10 @@ async function ensureServerListening(context: vscode.ExtensionContext) {
 export function activate(context: vscode.ExtensionContext) {
 	setRemoteAdbLogger(logger);
 
+	context.subscriptions.push(vscode.commands.registerCommand('remote-adb-server.activate', async () => {
+		return true;
+	}));
+
 	context.subscriptions.push(vscode.commands.registerCommand('remote-adb.openExternal', async () => {
 		await ensureServerListening(context);
 

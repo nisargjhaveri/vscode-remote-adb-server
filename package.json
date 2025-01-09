@@ -19,6 +19,7 @@
 		"debugging"
 	],
 	"activationEvents": [
+		"onCommand:remote-adb-server.activate",
 		"onCommand:remote-adb.openExternal",
 		"onCommand:remote-adb.getExternalUrl"
 	],
