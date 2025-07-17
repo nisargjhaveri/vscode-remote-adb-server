@@ -2,6 +2,9 @@
 
 All notable changes to the "remote-adb-server" extension will be documented in this file.
 
+## 0.4.0
+- Bump [remote-adb](https://github.com/nisargjhaveri/remote-adb) to 3.2.0
+
 ## 0.3.0
 - Change command prefixes from `remote-adb` to `remote-adb-server`.
 - Bump [remote-adb](https://github.com/nisargjhaveri/remote-adb) to 3.1.0
